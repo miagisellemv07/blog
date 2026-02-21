@@ -1,0 +1,93 @@
+/* ===== FONDO GENERAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+
+    background-image: url("../img/hoja.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* CAPA OSCURA SOBRE EL FONDO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(33, 1, 83, 0.158);
+    z-index: 0;
+}
+
+/* ===== MENÚ FIJO ARRIBA ===== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: #8325ff;
+    padding: 15px 0;
+    text-align: center;
+
+    z-index: 2; /* más alto que todo */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADER (IMAGEN + TEXTO) ===== */
+.hero {
+    position: relative;
+    z-index: 1;
+
+    margin-top: -100px;   /* ⬅ CLAVE */
+    padding-bottom: 30px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* IMAGEN SUPERIOR (NO ES FONDO) */
+.hero-img {
+    max-width: 700px;   /* ajusta tamaño aquí */
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* TEXTO DEL HEADER */
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    color: white;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white;
+}
+
+/* ===== CONTENIDO ===== */
+main {
+    position: relative;
+    z-index: 1;
+
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 10px;
+}
